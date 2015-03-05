@@ -82,8 +82,19 @@
 
 	        document.addEventListener("deviceready", onDeviceReady, false);
 	 
-	        function onDeviceReady() {}
-	 
+	        function onDeviceReady() {
+				window.plugins.launcher.launch({packageName:'br.com.codesquad.build'}, successCallback, errorCallback);
+			}
+			
+			function successCallback(){
+				alert('Abriu');
+			}
+			
+			function errorCallback(){
+				alert('Não abriu');
+			}
+		
+		
 	        function getImage() {
 
 	            navigator.camera.getPicture(uploadPhoto, 
